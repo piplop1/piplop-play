@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: unless-stopped
+    environment:
+      - 'POSTGRES_DB=piplop_play_db'
+      - 'POSTGRES_PASSWORD=leonardo.piplop'
+      - 'POSTGRES_USER=leonardo'
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/data/postgres
+volumes:
+  pgdata:
